@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Решаем задания — ОГЭ English</title>
+  <meta name="description" content="Официальные задания ОГЭ по английскому из открытого банка ФИПИ по разделам, с бланком, таймером и счётчиком слов.">
+  <meta name="theme-color" content="#b83227">
+  <meta property="og:title" content="Решаем задания — ОГЭ English">
+  <meta property="og:description" content="Официальные задания ОГЭ по английскому из открытого банка ФИПИ по разделам, с бланком, таймером и счётчиком слов.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script>(function(){var d=document.documentElement;try{var t=JSON.parse(localStorage.getItem('ogeen:theme'));if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}d.setAttribute('data-theme-effective',d.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));if(/^https?:$/.test(location.protocol)){var m=document.createElement("link");m.rel="manifest";m.href="manifest.webmanifest";document.head.appendChild(m)}})()</script>
+</head>
+<body class="page-solve">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="index.html" aria-label="ОГЭ English, на главную">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="9" style="fill:var(--accent)"/><path d="M8 8.5h16a2.5 2.5 0 0 1 2.5 2.5v8.5A2.5 2.5 0 0 1 24 22h-9l-5 4v-4H8a2.5 2.5 0 0 1-2.5-2.5V11A2.5 2.5 0 0 1 8 8.5z" style="fill:var(--on-accent)"/><path d="M11 13.5h10M11 17.5h6" style="stroke:var(--accent);stroke-width:2.2;stroke-linecap:round"/></svg>
+        <span>ОГЭ English</span>
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="solve.html" aria-current="page">Решаем</a></li>
+          <li><a href="progress.html">Мой прогресс</a></li>
+          <li><a href="plan.html">План подготовки</a></li>
+          <li><a href="exam.html">Об экзамене</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-label="Переключить тему">
+        <svg class="ico i-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+        <svg class="ico i-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+      </button>
+      <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="wrap wrap-wide">
+      <div class="page-head">
+        <div class="page-art" data-art="prompts" aria-hidden="true"></div>
+        <h1>Решаем задания</h1>
+        <p class="lead">Официальные задания из открытого банка ФИПИ. Под каждым заданием есть кнопка «Ответить» — банк сам проверит ответ.</p>
+      </div>
+
+      <fieldset class="field section-pick">
+        <legend>Раздел</legend>
+        <div class="chips" id="section-chips"></div>
+      </fieldset>
+      <p class="callout section-tip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-bulb"></use></svg><span id="section-tip"></span></p>
+
+      <div class="solve-grid">
+        <section class="card bank-card" id="bank-card" aria-label="Задания из банка ФИПИ">
+          <div class="bank-bar">
+            <div class="bank-nav">
+              <button type="button" class="icon-btn" id="page-prev" aria-label="Предыдущая страница"><svg class="ico" aria-hidden="true" focusable="false" style="transform:rotate(180deg)"><use href="#i-arrow"></use></svg></button>
+              <span class="bank-page" id="page-text" aria-live="polite"></span>
+              <button type="button" class="icon-btn" id="page-next" aria-label="Следующая страница"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
+            </div>
+            <div class="bank-goto">
+              <label for="page-input" class="visually-hidden">Номер страницы</label>
+              <input class="input input-sm" id="page-input" type="number" inputmode="numeric" min="1" placeholder="№ стр.">
+              <button type="button" class="btn btn-outline btn-sm" id="page-go">Перейти</button>
+            </div>
+            <a class="btn btn-outline btn-sm" id="open-new-tab" href="#" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>В новой вкладке<span class="visually-hidden"> (откроется в новой вкладке)</span></a>
+          </div>
+          <p class="mode-note" id="mode-note" hidden>Открыто задание <strong data-code></strong>. <button type="button" class="link-btn" id="back-to-section">Вернуться к разделу</button></p>
+          <iframe class="bank-frame" id="bank-frame" title="Открытый банк заданий ФИПИ" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <p class="bank-source">Задания показываются с сайта ФИПИ (oge.fipi.ru) и нужен интернет. Если они не видны — нажми «В новой вкладке».</p>
+        </section>
+
+        <aside class="solve-side" aria-label="Мой бланк">
+          <section class="card side-card" aria-labelledby="mark-title">
+            <h2 id="mark-title" class="side-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Отметить задание</h2>
+            <p class="muted side-hint">Код задания — строка «Номер» под заданием в банке, например <b>42BF66</b>.</p>
+            <label class="field-label" for="mark-code">Код задания</label>
+            <input class="input code-input" id="mark-code" type="text" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="42BF66">
+            <label class="field-label" for="mark-note" style="margin-top:10px">Заметка <span class="muted" style="font-weight:400">(необязательно)</span></label>
+            <input class="input" id="mark-note" type="text" placeholder="Например: перепутала False и Not stated">
+            <div class="mark-buttons">
+              <button type="button" class="btn btn-ok" id="mark-ok"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Верно</button>
+              <button type="button" class="btn btn-bad" id="mark-bad"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg>Ошибка</button>
+            </div>
+            <p class="today-stat" id="today-stat"></p>
+            <ul class="today-list" id="today-list"></ul>
+            <p class="muted side-hint" id="today-empty">Сегодня ещё ничего не отмечено.</p>
+          </section>
+
+          <section class="card side-card" aria-labelledby="timer-title">
+            <h2 id="timer-title" class="side-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-clock"></use></svg>Таймер</h2>
+            <div class="timer-display" id="timer-display" role="timer" aria-live="off">30:00</div>
+            <div class="chips timer-presets" id="timer-presets" role="radiogroup" aria-label="Время таймера">
+              <label class="chip"><input type="radio" name="timer" value="40"><span>40 с</span></label>
+              <label class="chip"><input type="radio" name="timer" value="90"><span>1,5 мин</span></label>
+              <label class="chip"><input type="radio" name="timer" value="120"><span>2 мин</span></label>
+              <label class="chip"><input type="radio" name="timer" value="900"><span>15 мин</span></label>
+              <label class="chip"><input type="radio" name="timer" value="1800" checked><span>30 мин</span></label>
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary" id="timer-start" style="flex:1"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-clock"></use></svg><span>Старт</span></button>
+              <button type="button" class="btn btn-outline" id="timer-reset"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-reset"></use></svg>Сброс</button>
+            </div>
+            <p class="muted side-hint" style="margin-top:10px">На экзамене: около 30 минут на раздел письменной части; в устной — 1,5 минуты на подготовку, до 2 минут на ответ, 40 секунд на вопрос.</p>
+          </section>
+
+          <details class="card side-card side-details" id="words-details">
+            <summary class="side-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg>Счётчик слов для письма</summary>
+            <label class="visually-hidden" for="words">Текст письма</label>
+            <textarea class="textarea" id="words" rows="6" placeholder="Hi Mary! Thanks for your email…"></textarea>
+            <p class="words-count" id="words-count" aria-live="polite">0 слов</p>
+            <p class="words-msg" id="words-msg"></p>
+            <p class="muted side-hint">Считаем по правилам ФИПИ: I’ve, e-mail, 2027 — одно слово; обращение и подпись тоже считаются.</p>
+          </details>
+
+          <section class="card side-card" aria-labelledby="find-title">
+            <h2 id="find-title" class="side-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg>Открыть задание по коду</h2>
+            <form id="find-form" class="find-form">
+              <label class="visually-hidden" for="find-code">Код задания</label>
+              <input class="input code-input" id="find-code" type="text" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="42BF66">
+              <button type="submit" class="btn btn-outline">Открыть</button>
+            </form>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>
+        <p class="footer-note"><strong>ОГЭ English</strong> — сайт для подготовки к ОГЭ по английскому языку.</p>
+        <p class="footer-note">Задания — из открытого банка ФИПИ и показываются с сайта ФИПИ. Отметки и прогресс хранятся только в этом браузере.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале">
+        <a href="exam.html">Об экзамене</a>
+        <a href="progress.html">Мой прогресс</a>
+        <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener noreferrer">Сайт ФИПИ<span class="visually-hidden"> (откроется в новой вкладке)</span></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/solve.js"></script>
+</body>
+</html>

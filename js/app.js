@@ -131,10 +131,10 @@
     if (s.indexOf('Аудирование') === 0) return ['headphones', '#8ec9f5'];
     if (s.indexOf('Чтение') === 0) return ['book', '#c6ef6b'];
     if (s.indexOf('Грамматика') === 0) return ['sliders', '#ffd93d'];
-    if (s.indexOf('Словообразование') === 0) return ['spark', '#ffb84d'];
+    if (s.indexOf('Словообразование') === 0 || s.indexOf('Лексика') === 0) return ['spark', '#ffb84d'];
     if (s.indexOf('Письмо') === 0) return ['mail', '#ff8a65'];
-    if (s.indexOf('Устная') === 0) return ['mic', '#ffc2d1'];
-    if (s.indexOf('Весь экзамен') === 0) return ['target', '#9fe0c4'];
+    if (s.indexOf('Устная') === 0 || s.indexOf('Говорение') === 0) return ['mic', '#ffc2d1'];
+    if (s.indexOf('Весь экзамен') === 0 || s.indexOf('Все задания') === 0 || s.indexOf('Пробники') === 0) return ['target', '#9fe0c4'];
     return ['wand', '#e7e2d6'];
   }
 
@@ -520,6 +520,96 @@
     }
   }
   App.updateBadge = updateBadge;
+
+  /* ---------- Банк ФИПИ: ссылки на задания ---------- */
+
+  App.bankSection = function (id) {
+    var list = (window.BANK && window.BANK.sections) || [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
+  };
+
+  // Страница банка с заданиями раздела (page — с нуля)
+  App.bankUrl = function (sectionId, page) {
+    var B = window.BANK, s = App.bankSection(sectionId);
+    var url = B.base + '?proj=' + B.proj + '&search=1&pagesize=' + B.pageSize;
+    if (s && s.theme) url += '&theme=' + encodeURIComponent(s.theme);
+    if (page) url += '&page=' + page;
+    return url;
+  };
+
+  // Одно задание по коду из банка (например, 42BF66)
+  App.taskUrl = function (code) {
+    var B = window.BANK;
+    return B.base + '?proj=' + B.proj + '&search=1&qid=' + encodeURIComponent(code);
+  };
+
+  App.normCode = function (code) {
+    var c = String(code || '').toUpperCase().replace(/[^0-9A-F]/g, '');
+    return c.length === 6 ? c : '';
+  };
+
+  /* ---------- Результаты: какие задания решены и где ошибки ----------
+     Запись: { code, section, ok, note, ts, fixed } — каждая попытка отдельно. */
+
+  App.results = {
+    list: function () { return App.store.get('results', []); },
+    add: function (r) {
+      var list = App.results.list();
+      r.ts = Date.now();
+      r.fixed = false;
+      list.push(r);
+      // Если задание решено верно — старые ошибки по нему считаются исправленными
+      if (r.ok) list.forEach(function (x) { if (x.code === r.code && !x.ok) x.fixed = true; });
+      App.store.set('results', list);
+      App.markDay();
+      return r;
+    },
+    save: function (list) { App.store.set('results', list); },
+    // Последняя попытка по каждому заданию
+    latest: function () {
+      var map = {};
+      App.results.list().forEach(function (r) { map[r.code] = r; });
+      return Object.keys(map).map(function (k) { return map[k]; });
+    },
+    // Ошибки, которые ещё не исправлены (по одной на задание)
+    errors: function () {
+      return App.results.latest().filter(function (r) { return !r.ok && !r.fixed; })
+        .sort(function (a, b) { return b.ts - a.ts; });
+    },
+    stats: function (sectionId) {
+      var latest = App.results.latest().filter(function (r) { return !sectionId || r.section === sectionId; });
+      var ok = latest.filter(function (r) { return r.ok; }).length;
+      return { solved: latest.length, ok: ok, pct: latest.length ? Math.round(ok / latest.length * 100) : 0 };
+    }
+  };
+
+  /* ---------- Дни занятий ---------- */
+
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+  App.dayKey = function (d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); };
+
+  App.markDay = function () {
+    var days = App.store.get('days', []);
+    var k = App.dayKey(new Date());
+    if (days.indexOf(k) === -1) { days.push(k); App.store.set('days', days); }
+  };
+
+  App.streak = function () {
+    var set = {};
+    App.store.get('days', []).forEach(function (d) { set[d] = true; });
+    var d = new Date();
+    if (!set[App.dayKey(d)]) d.setDate(d.getDate() - 1); // серия не обрывается до конца сегодняшнего дня
+    var n = 0;
+    while (set[App.dayKey(d)]) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  };
+
+  App.daysLeft = function () {
+    var v = App.store.get('examDate', '');
+    if (!v) return null;
+    return Math.ceil((new Date(v + 'T09:00:00') - new Date()) / 86400000);
+  };
 
   /* ---------- Окно с QR-кодом ---------- */
 

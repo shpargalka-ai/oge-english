@@ -1,4 +1,5 @@
 /* ОГЭ English — service worker: офлайн-режим.
+   Задания банка ФИПИ (oge.fipi.ru) не кэшируются — для них нужен интернет.
    Стратегия cache-first: файл отдаётся из кэша сразу, а в фоне (если есть интернет)
    кэш обновляется свежей версией — она появится при следующем открытии.
    Добавили новый файл на сайт — впишите его в FILES и увеличьте номер VERSION.
@@ -10,21 +11,18 @@ var CACHE = 'ogeen-' + VERSION;
 var FILES = [
   './',
   'index.html',
-  'constructor.html',
-  'prompts.html',
+  'solve.html',
+  'progress.html',
   'plan.html',
   'exam.html',
-  'how.html',
-  'safety.html',
-  'my.html',
   'css/style.css',
   'css/print.css',
   'js/data.js',
   'js/app.js',
-  'js/constructor.js',
-  'js/prompts.js',
+  'js/home.js',
+  'js/solve.js',
+  'js/progress.js',
   'js/plan.js',
-  'js/my.js',
   'js/qr.js',
   'assets/favicon.svg',
   'assets/icon-192.png',

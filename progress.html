@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мой прогресс — ОГЭ English</title>
+  <meta name="description" content="Сколько заданий решено, процент верных ответов по разделам и работа над ошибками.">
+  <meta name="theme-color" content="#b83227">
+  <meta property="og:title" content="Мой прогресс — ОГЭ English">
+  <meta property="og:description" content="Сколько заданий решено, процент верных ответов по разделам и работа над ошибками.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script>(function(){var d=document.documentElement;try{var t=JSON.parse(localStorage.getItem('ogeen:theme'));if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}d.setAttribute('data-theme-effective',d.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));if(/^https?:$/.test(location.protocol)){var m=document.createElement("link");m.rel="manifest";m.href="manifest.webmanifest";document.head.appendChild(m)}})()</script>
+</head>
+<body class="page-progress">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="index.html" aria-label="ОГЭ English, на главную">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="9" style="fill:var(--accent)"/><path d="M8 8.5h16a2.5 2.5 0 0 1 2.5 2.5v8.5A2.5 2.5 0 0 1 24 22h-9l-5 4v-4H8a2.5 2.5 0 0 1-2.5-2.5V11A2.5 2.5 0 0 1 8 8.5z" style="fill:var(--on-accent)"/><path d="M11 13.5h10M11 17.5h6" style="stroke:var(--accent);stroke-width:2.2;stroke-linecap:round"/></svg>
+        <span>ОГЭ English</span>
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="solve.html">Решаем</a></li>
+          <li><a href="progress.html" aria-current="page">Мой прогресс</a></li>
+          <li><a href="plan.html">План подготовки</a></li>
+          <li><a href="exam.html">Об экзамене</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-label="Переключить тему">
+        <svg class="ico i-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+        <svg class="ico i-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+      </button>
+      <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="wrap" id="progress-root">
+      <div class="page-head">
+        <div class="page-art" data-art="my" aria-hidden="true"></div>
+        <h1>Мой прогресс</h1>
+        <p class="lead">Сколько заданий решено, где получается, а что нужно разобрать ещё раз.</p>
+      </div>
+
+      <ul class="stats" style="list-style:none;margin:0 0 8px;padding:0">
+        <li class="stat"><span class="stat-num" id="st-solved">0</span><span class="stat-label">заданий решено</span></li>
+        <li class="stat"><span class="stat-num" id="st-pct">—</span><span class="stat-label">верных ответов</span></li>
+        <li class="stat"><span class="stat-num" id="st-streak">0</span><span class="stat-label">дней подряд с занятиями</span></li>
+        <li class="stat"><span class="stat-num" id="st-left">—</span><span class="stat-label" id="st-left-label">до экзамена</span></li>
+      </ul>
+
+      <section class="section" aria-labelledby="errors-title" id="errors-section">
+        <div class="section-head">
+          <span class="section-kicker">Работа над ошибками</span>
+          <h2 id="errors-title">Разобрать ещё раз <span class="badge" id="errors-count">0</span></h2>
+          <p>Задания, отмеченные как «Ошибка». Реши снова — если получится, задание само уйдёт из списка.</p>
+        </div>
+        <ul class="err-list" id="errors"></ul>
+        <div class="empty" id="errors-empty" hidden>
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>
+          <h3>Ошибок для разбора нет</h3>
+          <p>Отмечай задания в бланке на странице «Решаем» — ошибки появятся здесь.</p>
+          <a class="btn btn-primary" href="solve.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pencil"></use></svg>Решать задания</a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="sections-title">
+        <div class="section-head">
+          <span class="section-kicker">По разделам</span>
+          <h2 id="sections-title">Где получается лучше</h2>
+          <p>Процент — доля верных ответов по последней попытке каждого задания.</p>
+        </div>
+        <div class="grid grid-3" id="sections"></div>
+      </section>
+
+      <section class="section" aria-labelledby="history-title">
+        <div class="section-head">
+          <span class="section-kicker">История</span>
+          <h2 id="history-title">Последние задания</h2>
+        </div>
+        <div class="table-wrap" id="history-wrap" hidden>
+          <table class="table table-stack">
+            <caption class="visually-hidden">Последние отмеченные задания</caption>
+            <thead><tr><th scope="col">Дата</th><th scope="col">Код</th><th scope="col">Раздел</th><th scope="col">Результат</th><th scope="col">Заметка</th><th scope="col"><span class="visually-hidden">Удалить</span></th></tr></thead>
+            <tbody id="history"></tbody>
+          </table>
+        </div>
+        <p class="muted" id="history-empty">Пока пусто — начни со страницы <a href="solve.html">«Решаем»</a>.</p>
+        <div class="btn-row" style="margin-top:16px">
+          <button type="button" class="btn btn-outline" id="export-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-download"></use></svg>Отчёт для учителя (.txt)</button>
+          <button type="button" class="btn btn-outline" id="reset-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-trash"></use></svg>Удалить все отметки</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>
+        <p class="footer-note"><strong>ОГЭ English</strong> — сайт для подготовки к ОГЭ по английскому языку.</p>
+        <p class="footer-note">Задания — из открытого банка ФИПИ и показываются с сайта ФИПИ. Отметки и прогресс хранятся только в этом браузере.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале">
+        <a href="exam.html">Об экзамене</a>
+        <a href="progress.html">Мой прогресс</a>
+        <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener noreferrer">Сайт ФИПИ<span class="visually-hidden"> (откроется в новой вкладке)</span></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>
