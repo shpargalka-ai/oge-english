@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конструктор промпта — ОГЭ English</title>
+  <meta name="description" content="Отметь раздел ОГЭ, тему и уровень — и получи готовый промпт для нейросети: объяснение, тренировка или проверка по критериям экзамена.">
+  <meta name="theme-color" content="#b83227">
+  <meta property="og:title" content="Конструктор промпта — ОГЭ English">
+  <meta property="og:description" content="Отметь раздел ОГЭ, тему и уровень — и получи готовый промпт для нейросети: объяснение, тренировка или проверка по критериям экзамена.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script>(function(){var d=document.documentElement;try{var t=JSON.parse(localStorage.getItem('ogeen:theme'));if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}d.setAttribute('data-theme-effective',d.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));if(/^https?:$/.test(location.protocol)){var m=document.createElement("link");m.rel="manifest";m.href="manifest.webmanifest";document.head.appendChild(m)}})()</script>
+</head>
+<body class="page-constructor">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="index.html" aria-label="ОГЭ English, на главную">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="9" style="fill:var(--accent)"/><path d="M8 8.5h16a2.5 2.5 0 0 1 2.5 2.5v8.5A2.5 2.5 0 0 1 24 22h-9l-5 4v-4H8a2.5 2.5 0 0 1-2.5-2.5V11A2.5 2.5 0 0 1 8 8.5z" style="fill:var(--on-accent)"/><path d="M11 13.5h10M11 17.5h6" style="stroke:var(--accent);stroke-width:2.2;stroke-linecap:round"/></svg>
+        <span>ОГЭ English</span>
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="constructor.html" aria-current="page">Конструктор</a></li>
+          <li><a href="prompts.html">Готовые промпты</a></li>
+          <li><a href="plan.html">План подготовки</a></li>
+          <li><a href="exam.html">Об экзамене</a></li>
+          <li><a href="how.html">Как учиться с ИИ</a></li>
+          <li><a href="safety.html">Безопасность</a></li>
+        </ul>
+      </nav>
+      <a class="my-link" href="my.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-save"></use></svg><span class="my-text">Мои</span> <span class="badge" data-my-count data-count="0">0</span></a>
+      <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-label="Переключить тему">
+        <svg class="ico i-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+        <svg class="ico i-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+      </button>
+      <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="wrap">
+      <div class="page-head">
+        <div class="page-art" data-art="constructor" aria-hidden="true"></div>
+        <h1>Конструктор промпта</h1>
+        <p class="lead">Отметь, что знаешь. Пустые места подсветятся жёлтым — промпт соберётся в любом случае.</p>
+      </div>
+
+      <div class="builder">
+        <form class="builder-form" id="builder-form" autocomplete="off" novalidate>
+          <div class="card">
+            <h2 class="form-step-title"><span class="n" aria-hidden="true">1</span>Что тренируем</h2>
+
+            <div class="field">
+              <label for="template">Шаблон</label>
+              <span class="field-hint" id="template-hint">«Универсальный» собирается из всех полей формы. Можно взять готовый из базы.</span>
+              <select class="select" id="template" name="template" aria-describedby="template-hint"></select>
+            </div>
+            <div class="callout template-info" id="template-info" hidden>
+              <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-bulb"></use></svg>
+              <div>
+                <p id="template-summary"></p>
+                <p style="margin-bottom:4px"><strong>Как пользоваться:</strong></p>
+                <ul id="template-tips" style="margin:0;padding-left:1.2em"></ul>
+              </div>
+            </div>
+
+            <fieldset class="field" data-key="раздел">
+              <legend>Раздел ОГЭ <span class="unused-note">не влияет на этот шаблон</span></legend>
+              <div class="chips" id="section-chips"></div>
+            </fieldset>
+
+            <fieldset class="field" data-key="помощь">
+              <legend>Что нужно от нейросети <span class="unused-note">не влияет на этот шаблон</span></legend>
+              <div class="chips" id="help-chips"></div>
+            </fieldset>
+
+            <div class="field" data-key="тема" style="margin-bottom:0">
+              <label for="topic">Тема или задание <span class="unused-note">не влияет на этот шаблон</span></label>
+              <span class="field-hint" id="topic-hint">Чем точнее, тем лучше: не «грамматика», а «Present Perfect и Past Simple».</span>
+              <input class="input" id="topic" name="topic" type="text" aria-describedby="topic-hint" placeholder="Например: страдательный залог">
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="form-step-title"><span class="n" aria-hidden="true">2</span>Про тебя</h2>
+
+            <fieldset class="field" data-key="уровень">
+              <legend>Твой уровень <span class="unused-note">не влияет на этот шаблон</span></legend>
+              <div class="chips" id="level-chips"></div>
+            </fieldset>
+
+            <fieldset class="field" data-key="время">
+              <legend>Сколько минут есть на занятие <span class="unused-note">не влияет на этот шаблон</span></legend>
+              <div class="chips chips-num" id="duration-chips"></div>
+            </fieldset>
+
+            <div class="field" data-key="недели" style="margin-bottom:0">
+              <label for="weeks">Сколько недель до экзамена <span class="unused-note">не влияет на этот шаблон</span></label>
+              <span class="field-hint" id="weeks-hint">Нужно для плана подготовки. Если указать дату экзамена в «Плане подготовки», число подставится само.</span>
+              <input class="input" id="weeks" name="weeks" type="number" inputmode="numeric" min="1" max="52" placeholder="Например: 20" aria-describedby="weeks-hint" style="max-width:200px">
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="form-step-title"><span class="n" aria-hidden="true">3</span>Как объяснять</h2>
+            <fieldset class="field" data-key="объяснение" style="margin-bottom:0">
+              <legend class="visually-hidden">Как удобнее объяснять</legend>
+              <div class="checks checks-2" id="explain"></div>
+            </fieldset>
+          </div>
+
+          <div class="card">
+            <h2 class="form-step-title"><span class="n" aria-hidden="true">4</span>Что хочу на выходе</h2>
+            <fieldset class="field" data-key="формат" style="margin-bottom:0">
+              <legend class="visually-hidden">Что должно быть в ответе нейросети</legend>
+              <div class="checks checks-2" id="outputs"></div>
+            </fieldset>
+          </div>
+
+          <div class="card">
+            <h2 class="form-step-title"><span class="n" aria-hidden="true">5</span>Твой текст для проверки</h2>
+            <div class="field" data-key="текст" style="margin-bottom:0">
+              <label for="text">Письмо, монолог или свои ответы <span class="unused-note">не влияет на этот шаблон</span></label>
+              <span class="field-hint" id="text-hint">Необязательно. Без фамилии, названия школы и других личных данных — подпись только именем.</span>
+              <textarea class="textarea" id="text" name="text" rows="5" aria-describedby="text-hint" placeholder="Hi Mary! Thanks for your email…"></textarea>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top:16px">
+            <button type="button" class="btn btn-outline" id="reset-form"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-reset"></use></svg>Очистить форму</button>
+          </div>
+        </form>
+
+        <div class="builder-out">
+          <section class="card preview-card" id="preview-card" aria-labelledby="preview-title">
+            <div class="print-header print-only">ОГЭ English · промпт для нейросети · <span data-print-title></span></div>
+            <div class="preview-head">
+              <h2 id="preview-title">Твой промпт</h2>
+              <span class="gap-counter" id="gap-counter" aria-live="polite"></span>
+            </div>
+            <pre class="preview" id="preview" tabindex="0" aria-label="Текст промпта"></pre>
+            <div class="preview-actions">
+              <button type="button" class="btn btn-primary btn-lg btn-block" id="copy-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg>Скопировать промпт</button>
+              <p class="ai-note"><strong>Открыть нейросеть.</strong> Промпт скопируется сам — останется вставить его в чат.</p>
+              <div class="ai-buttons" id="ai-buttons"></div>
+              <div class="btn-row">
+                <button type="button" class="btn btn-outline btn-sm" id="qr-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-qr"></use></svg>QR-код</button>
+                <button type="button" class="btn btn-outline btn-sm" id="print-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-print"></use></svg>Печать</button>
+                <button type="button" class="btn btn-outline btn-sm" id="save-btn"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-save"></use></svg>Сохранить</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="section refine-block" aria-labelledby="refine-title">
+        <div class="section-head">
+          <h2 id="refine-title">Доработать ответ ИИ</h2>
+          <p>Нейросеть ответила, но не так, как нужно? Нажми кнопку — короткая просьба скопируется. Вставь её в тот же чат.</p>
+        </div>
+        <div class="refine-list" id="refine-list"></div>
+      </section>
+    </div>
+
+    <a class="jump-bar no-print" id="jump-bar" href="#preview-card">
+      <span id="jump-text">Готовый промпт</span>
+      <span class="jump-go">Смотреть <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>
+        <p class="footer-note"><strong>ОГЭ English</strong> — помощник для подготовки к ОГЭ по английскому языку с нейросетью.</p>
+        <p class="footer-note">Формат заданий — по демоверсии ФИПИ 2027. Сайт ничего не отправляет: отметки и промпты хранятся только в этом браузере.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале">
+        <a href="exam.html">Об экзамене</a>
+        <a href="safety.html">Безопасность</a>
+        <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener noreferrer">Сайт ФИПИ<span class="visually-hidden"> (откроется в новой вкладке)</span></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/constructor.js"></script>
+</body>
+</html>

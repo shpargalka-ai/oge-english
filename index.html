@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ОГЭ English — подготовка к ОГЭ по английскому с нейросетью</title>
+  <meta name="description" content="Конструктор промптов, 20 готовых запросов и план подготовки к ОГЭ по английскому языку: нейросеть объясняет, тренирует и проверяет.">
+  <meta name="theme-color" content="#b83227">
+  <meta property="og:title" content="ОГЭ English — подготовка к ОГЭ по английскому с нейросетью">
+  <meta property="og:description" content="Конструктор промптов, 20 готовых запросов и план подготовки к ОГЭ по английскому языку: нейросеть объясняет, тренирует и проверяет.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script>(function(){var d=document.documentElement;try{var t=JSON.parse(localStorage.getItem('ogeen:theme'));if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}d.setAttribute('data-theme-effective',d.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));if(/^https?:$/.test(location.protocol)){var m=document.createElement("link");m.rel="manifest";m.href="manifest.webmanifest";document.head.appendChild(m)}})()</script>
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="index.html" aria-label="ОГЭ English, на главную">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="9" style="fill:var(--accent)"/><path d="M8 8.5h16a2.5 2.5 0 0 1 2.5 2.5v8.5A2.5 2.5 0 0 1 24 22h-9l-5 4v-4H8a2.5 2.5 0 0 1-2.5-2.5V11A2.5 2.5 0 0 1 8 8.5z" style="fill:var(--on-accent)"/><path d="M11 13.5h10M11 17.5h6" style="stroke:var(--accent);stroke-width:2.2;stroke-linecap:round"/></svg>
+        <span>ОГЭ English</span>
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="constructor.html">Конструктор</a></li>
+          <li><a href="prompts.html">Готовые промпты</a></li>
+          <li><a href="plan.html">План подготовки</a></li>
+          <li><a href="exam.html">Об экзамене</a></li>
+          <li><a href="how.html">Как учиться с ИИ</a></li>
+          <li><a href="safety.html">Безопасность</a></li>
+        </ul>
+      </nav>
+      <a class="my-link" href="my.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-save"></use></svg><span class="my-text">Мои</span> <span class="badge" data-my-count data-count="0">0</span></a>
+      <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-label="Переключить тему">
+        <svg class="ico i-sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+        <svg class="ico i-moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+      </button>
+      <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-spark"></use></svg></span>ОГЭ-2027 · английский язык · без регистрации</p>
+          <h1>ОГЭ по английскому <span class="hl">без паники</span></h1>
+          <p class="lead">Промпты для нейросети, конструктор и план подготовки. Пусть ИИ объясняет, тренирует и проверяет тебя — а не решает за тебя.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="constructor.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wand"></use></svg>Собрать промпт</a>
+            <a class="btn btn-outline btn-lg" href="prompts.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-cards"></use></svg>Готовые промпты</a>
+            <a class="btn btn-outline btn-lg" href="plan.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-flag"></use></svg>План подготовки</a>
+          </div>
+        </div>
+        <div class="hero-art" data-art="hero" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Коротко об экзамене" style="padding-top:48px">
+      <div class="wrap">
+        <ul class="stats reveal" style="list-style:none;margin:0;padding:0">
+          <li class="stat"><span class="stat-num">20</span><span class="stat-label">готовых промптов под задания ОГЭ</span></li>
+          <li class="stat"><span class="stat-num">68</span><span class="stat-label">баллов максимум на экзамене</span></li>
+          <li class="stat"><span class="stat-num">38</span><span class="stat-label">заданий: письменная и устная части</span></li>
+          <li class="stat"><span class="stat-num">0</span><span class="stat-label">регистраций и данных о тебе</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-kicker">Как пользоваться</span>
+          <h2 id="steps-title">4 шага до занятия с ИИ</h2>
+          <p>Сайт сам ничего не отправляет нейросети — он помогает написать хороший запрос.</p>
+        </div>
+        <ol class="grid grid-4 reveal" style="list-style:none;margin:0;padding:0">
+          <li class="card step">
+            <span class="step-big" aria-hidden="true">01</span>
+            <span class="step-num"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-target"></use></svg></span>
+            <h3><span class="step-label">Шаг 1</span>Выбери раздел</h3>
+            <p>Аудирование, чтение, грамматика, письмо или устная часть.</p>
+          </li>
+          <li class="card step">
+            <span class="step-big" aria-hidden="true">02</span>
+            <span class="step-num"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pencil"></use></svg></span>
+            <h3><span class="step-label">Шаг 2</span>Расскажи о себе</h3>
+            <p>Тема, уровень, сколько у тебя минут.</p>
+          </li>
+          <li class="card step">
+            <span class="step-big" aria-hidden="true">03</span>
+            <span class="step-num"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-copy"></use></svg></span>
+            <h3><span class="step-label">Шаг 3</span>Скопируй промпт</h3>
+            <p>Одна кнопка — и запрос готов.</p>
+          </li>
+          <li class="card step">
+            <span class="step-big" aria-hidden="true">04</span>
+            <span class="step-num"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-chat"></use></svg></span>
+            <h3><span class="step-label">Шаг 4</span>Занимайся в чате</h3>
+            <p>Отвечай сама, а нейросеть подсказывает и проверяет.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="genres-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-kicker">Разделы экзамена</span>
+          <h2 id="genres-title">С чего начнём?</h2>
+          <p>Нажми на раздел — и увидишь готовые промпты для него.</p>
+        </div>
+        <div class="genre-strip reveal" data-genre-strip>
+          <a class="genre-chip" href="prompts.html">Все готовые промпты</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ba-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="section-kicker">До и после</span>
+          <h2 id="ba-title">Важно, <span class="hl">как</span> ты спросишь</h2>
+          <p>Одна и та же нейросеть, одна и та же тема. Разница — только в запросе.</p>
+        </div>
+        <div class="ba reveal">
+          <article class="ba-col ba-bad" aria-labelledby="ba-bad-title">
+            <span class="ba-sticker" aria-hidden="true">Скучно</span>
+            <h3 class="ba-title" id="ba-bad-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg>Так обычно спрашивают</h3>
+            <p class="ba-label">Запрос</p>
+            <p class="ba-prompt">Объясни Present Perfect</p>
+            <p class="ba-label">Что ответила нейросеть</p>
+            <div class="ba-result">
+              «Present Perfect — настоящее совершённое время. Образуется с помощью have/has и третьей формы глагола. Пример: I have done my homework.»
+              <ul>
+                <li>Непонятно, чем отличается от Past Simple</li>
+                <li>Нет практики и проверки</li>
+                <li>Никакой связи с заданиями ОГЭ</li>
+              </ul>
+            </div>
+          </article>
+          <article class="ba-col ba-good" aria-labelledby="ba-good-title">
+            <span class="ba-sticker" aria-hidden="true">Готово к занятию</span>
+            <h3 class="ba-title" id="ba-good-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>Так спрашивают с ОГЭ English</h3>
+            <p class="ba-label">Запрос</p>
+            <p class="ba-prompt">Ты — преподаватель английского и эксперт ОГЭ.
+Тема: Present Perfect и Past Simple — в чём разница.
+Мой уровень: средний, путаю маркеры времени. У меня 20 минут.
+Объясни по-русски, с таблицей и примерами из жизни подростка.
+Дай 5 заданий в формате 20–28, ответы — в самом конце…</p>
+            <p class="ba-label">Что ответила нейросеть</p>
+            <div class="ba-result">
+              Занятие на 20 минут:
+              <ul>
+                <li>Таблица «когда что» с маркерами времени</li>
+                <li>Примеры про школу, друзей и соцсети</li>
+                <li>5 заданий как в разделе грамматики ОГЭ</li>
+                <li>Ответы с пояснениями в самом конце</li>
+                <li>Что повторить завтра</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="constructor.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wand"></use></svg>Собрать такой запрос</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="safe-title">
+      <div class="wrap">
+        <div class="callout reveal">
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg>
+          <div>
+            <h2 id="safe-title" style="font-size:1.2rem;margin-bottom:.3em">Нейросеть — репетитор, а не решебник</h2>
+            <p>Не вводи фамилию, школу, адрес и телефон. Ответы ИИ проверяй по учебнику и демоверсии ФИПИ — нейросеть тоже ошибается. <a href="safety.html">Подробнее о безопасности</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="share-title">
+      <div class="wrap">
+        <div class="card qr-promo reveal">
+          <div class="qr-box"><canvas data-site-qr width="200" height="200" role="img" aria-label="QR-код со ссылкой на этот сайт"></canvas></div>
+          <div>
+            <span class="section-kicker">На телефон</span>
+            <h2 id="share-title">Открой сайт на телефоне</h2>
+            <p>Наведи камеру телефона на код — и сайт всегда будет под рукой. После первого открытия он работает даже без интернета.</p>
+            <p class="muted" data-site-qr-note></p>
+            <div class="btn-row">
+              <button type="button" class="btn btn-outline" data-site-qr-big><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-qr"></use></svg>Показать крупно</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <div class="cta-deco" data-art="cta" aria-hidden="true"></div>
+          <div>
+            <h2 id="cta-title">15 минут в день — и раздел за разделом</h2>
+            <p>Начни с того, что пугает больше всего. Отмечай прогресс в плане подготовки.</p>
+          </div>
+          <a class="btn btn-primary btn-lg" href="constructor.html"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wand"></use></svg>Открыть конструктор</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <div>
+        <p class="footer-note"><strong>ОГЭ English</strong> — помощник для подготовки к ОГЭ по английскому языку с нейросетью.</p>
+        <p class="footer-note">Формат заданий — по демоверсии ФИПИ 2027. Сайт ничего не отправляет: отметки и промпты хранятся только в этом браузере.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале">
+        <a href="exam.html">Об экзамене</a>
+        <a href="safety.html">Безопасность</a>
+        <a href="https://fipi.ru/oge/demoversii-specifikacii-kodifikatory" target="_blank" rel="noopener noreferrer">Сайт ФИПИ<span class="visually-hidden"> (откроется в новой вкладке)</span></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/qr.js"></script>
+</body>
+</html>
