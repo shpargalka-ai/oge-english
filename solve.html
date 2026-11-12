@@ -57,7 +57,480 @@
       <p class="callout section-tip"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-bulb"></use></svg><span id="section-tip"></span></p>
 
       <div class="solve-grid">
-        <section class="card bank-card" id="bank-card" aria-label="Задания из банка ФИПИ">
+        <section class="card bank-card" id="bank-card" aria-label="Правила и задания">
+          <div class="bank-tabs" id="bank-tabs" hidden>
+            <div class="tabs" role="tablist" aria-label="Правила или задания">
+              <button type="button" role="tab" id="tab-theory" aria-controls="theory-panel" aria-selected="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-book"></use></svg>Правила</button>
+              <button type="button" role="tab" id="tab-tasks" aria-controls="tasks-panel" aria-selected="false" tabindex="-1"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pencil"></use></svg>Задания ФИПИ</button>
+            </div>
+          </div>
+
+          <div id="theory-panel" role="tabpanel" aria-labelledby="tab-theory" hidden>
+            <div class="theory" data-theory="gram" hidden>
+              <div class="print-header print-only">ОГЭ English · Времена английского глагола для заданий 20–28</div>
+              <div class="theory-head">
+                <div>
+                  <span class="section-kicker">Шаг 1 · Повторяем правила</span>
+                  <h2 class="theory-title">Все времена для заданий 20–28</h2>
+                  <p class="muted">В заданиях 20–28 слово в конце строки нужно поставить в нужную форму. Чаще всего это глагол — и главное выбрать правильное время. Здесь собраны все времена, которые есть в кодификаторе ОГЭ-2027.</p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm no-print" data-print-theory><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-print"></use></svg>Распечатать</button>
+              </div>
+
+              <nav class="theory-nav no-print" aria-label="Темы правил">
+                <a href="#th-how">Как решать</a>
+                <a href="#th-table">Шпаргалка</a>
+                <a href="#th-simple">Simple</a>
+                <a href="#th-continuous">Continuous</a>
+                <a href="#th-perfect">Perfect</a>
+                <a href="#th-ppc">Perfect Continuous</a>
+                <a href="#th-future">Будущее</a>
+                <a href="#th-passive">Пассив</a>
+                <a href="#th-reported">Согласование времён</a>
+                <a href="#th-cond">If и I wish</a>
+                <a href="#th-irregular">Неправильные глаголы</a>
+                <a href="#th-check">Проверь себя</a>
+              </nav>
+
+              <section class="theory-block" id="th-how" aria-labelledby="th-how-t">
+                <h3 id="th-how-t">Как решать задания 20–28</h3>
+                <ol class="how-steps">
+                  <li><b>Прочитай весь текст вокруг пропуска.</b> Если это рассказ о прошлом — скорее всего нужно прошедшее время.</li>
+                  <li><b>Найди слова-маркеры:</b> yesterday, ago, last… → Past Simple; already, just, ever, since, for → Present Perfect; now, Look! → Present Continuous; tomorrow, next… → Future Simple.</li>
+                  <li><b>Проверь, кто действует.</b> Если действие совершают над предметом (мост построили, письмо написали) — нужен пассивный залог: be + третья форма.</li>
+                  <li><b>Посмотри на подлежащее.</b> He, she, it и одно существительное в Present Simple → окончание -s; has вместо have; was вместо were.</li>
+                  <li><b>Проверь правописание.</b> Ответ с орфографической ошибкой не засчитывается. Ответ может состоять из нескольких слов: has been, was built, will go.</li>
+                </ol>
+              </section>
+
+              <section class="theory-block" id="th-table" aria-labelledby="th-table-t">
+                <h3 id="th-table-t">Шпаргалка: все времена на одном экране</h3>
+                <div class="table-wrap">
+                  <table class="table table-stack cheat-table">
+                    <caption class="visually-hidden">Времена английского глагола: формула, маркеры и пример</caption>
+                    <thead><tr><th scope="col">Время</th><th scope="col">Формула</th><th scope="col">Маркеры</th><th scope="col">Пример</th></tr></thead>
+                    <tbody>
+                      <tr><td data-label="Время"><b>Present Simple</b></td><td data-label="Формула">V / V-s (he, she, it)</td><td data-label="Маркеры">always, usually, often, every day</td><td data-label="Пример">She often <b>reads</b> before bed.</td></tr>
+                      <tr><td data-label="Время"><b>Past Simple</b></td><td data-label="Формула">V-ed / 2-я форма</td><td data-label="Маркеры">yesterday, last…, …ago, in 2020</td><td data-label="Пример">We <b>visited</b> Kazan last year.</td></tr>
+                      <tr><td data-label="Время"><b>Future Simple</b></td><td data-label="Формула">will + V</td><td data-label="Маркеры">tomorrow, next…, soon</td><td data-label="Пример">I <b>will help</b> you.</td></tr>
+                      <tr><td data-label="Время"><b>Present Continuous</b></td><td data-label="Формула">am / is / are + V-ing</td><td data-label="Маркеры">now, at the moment, Look!</td><td data-label="Пример">They <b>are playing</b> now.</td></tr>
+                      <tr><td data-label="Время"><b>Past Continuous</b></td><td data-label="Формула">was / were + V-ing</td><td data-label="Маркеры">at 5 o’clock yesterday, while, when</td><td data-label="Пример">I <b>was sleeping</b> at midnight.</td></tr>
+                      <tr><td data-label="Время"><b>Present Perfect</b></td><td data-label="Формула">have / has + 3-я форма</td><td data-label="Маркеры">already, just, yet, ever, never, since, for</td><td data-label="Пример">I <b>have</b> just <b>eaten</b>.</td></tr>
+                      <tr><td data-label="Время"><b>Past Perfect</b></td><td data-label="Формула">had + 3-я форма</td><td data-label="Маркеры">by the time, before (о прошлом)</td><td data-label="Пример">The film <b>had started</b> before we came.</td></tr>
+                      <tr><td data-label="Время"><b>Present Perfect Continuous</b></td><td data-label="Формула">have / has been + V-ing</td><td data-label="Маркеры">for, since, all day, how long</td><td data-label="Пример">It <b>has been raining</b> since morning.</td></tr>
+                      <tr><td data-label="Время"><b>Future-in-the-Past</b></td><td data-label="Формула">would + V</td><td data-label="Маркеры">после said, thought, knew, hoped</td><td data-label="Пример">He said he <b>would come</b>.</td></tr>
+                      <tr><td data-label="Время"><b>Пассив</b></td><td data-label="Формула">be (в нужном времени) + 3-я форма</td><td data-label="Маркеры">by…, действие над предметом</td><td data-label="Пример">The letter <b>was written</b> by Tom.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-simple" aria-labelledby="th-simple-t">
+                <h3 id="th-simple-t">Группа Simple — факты, привычки, события</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Present Simple <span>настоящее простое</span></h4>
+                    <p><b>Когда:</b> привычки и регулярные действия, факты, расписания.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / you / we / they <b>work</b> · he / she / it <b>works</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>I <b>don’t work</b> · she <b>doesn’t work</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Do</b> you <b>work</b>? · <b>Does</b> he <b>work</b>?</td></tr>
+                    </table>
+                    <p class="markers">always · usually · often · sometimes · never · every day · on Mondays</p>
+                    <p class="ex">My brother <b>plays</b> football every Saturday. <span class="tr">Мой брат играет в футбол каждую субботу.</span></p>
+                    <p class="note">Правописание: watch → watch<b>es</b>, go → go<b>es</b>, study → stud<b>ies</b>, have → <b>has</b>. Глагол be: I <b>am</b>, he <b>is</b>, they <b>are</b>.</p>
+                  </article>
+                  <article class="tense">
+                    <h4>Past Simple <span>прошедшее простое</span></h4>
+                    <p><b>Когда:</b> действие закончилось в прошлом; цепочка событий в рассказе.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I <b>worked</b> · she <b>went</b> (2-я форма неправильных глаголов)</td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>I <b>didn’t work</b> · she <b>didn’t go</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Did</b> you <b>work</b>? · <b>Did</b> she <b>go</b>?</td></tr>
+                    </table>
+                    <p class="markers">yesterday · last week · two days ago · in 2020 · when I was a child</p>
+                    <p class="ex">We <b>visited</b> London two years ago. <span class="tr">Мы были в Лондоне два года назад.</span></p>
+                    <p class="note">Правописание: live → liv<b>ed</b>, stop → sto<b>pped</b>, study → stud<b>ied</b>. Глагол be: I / he <b>was</b>, we / they <b>were</b>.</p>
+                  </article>
+                  <article class="tense">
+                    <h4>Future Simple <span>будущее простое</span></h4>
+                    <p><b>Когда:</b> решение в момент речи, обещание, прогноз, будущий факт.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / he / they <b>will work</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>I <b>won’t (will not) work</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Will</b> you <b>work</b>?</td></tr>
+                    </table>
+                    <p class="markers">tomorrow · next week · soon · in 2030 · I think · probably</p>
+                    <p class="ex">I think it <b>will rain</b> tomorrow. <span class="tr">Думаю, завтра будет дождь.</span></p>
+                    <p class="note"><b>Важно:</b> после if, when, before, after, as soon as в придаточном — Present Simple, а не will: <i>When she <b>comes</b>, we will start.</i></p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-continuous" aria-labelledby="th-cont-t">
+                <h3 id="th-cont-t">Группа Continuous — действие в процессе</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Present Continuous <span>настоящее длительное</span></h4>
+                    <p><b>Когда:</b> происходит прямо сейчас; временная ситуация; договорённость на будущее.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I <b>am working</b> · she <b>is working</b> · they <b>are working</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>I <b>am not</b> · she <b>isn’t</b> · they <b>aren’t working</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Are</b> you <b>working</b>? · <b>Is</b> she <b>working</b>?</td></tr>
+                    </table>
+                    <p class="markers">now · right now · at the moment · Look! · Listen! · these days</p>
+                    <p class="ex">Be quiet! The baby <b>is sleeping</b>. <span class="tr">Тише! Малыш спит.</span></p>
+                    <p class="note">Правописание: make → ma<b>king</b>, swim → swi<b>mming</b>, lie → l<b>ying</b>. Глаголы know, like, love, want, need, understand, believe обычно <b>не</b> ставят в Continuous.</p>
+                  </article>
+                  <article class="tense">
+                    <h4>Past Continuous <span>прошедшее длительное</span></h4>
+                    <p><b>Когда:</b> действие шло в определённый момент прошлого; «фон» для другого действия.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / she <b>was working</b> · we / they <b>were working</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>she <b>wasn’t</b> · they <b>weren’t working</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Was</b> she <b>working</b>? · <b>Were</b> they <b>working</b>?</td></tr>
+                    </table>
+                    <p class="markers">at 5 o’clock yesterday · at that moment · while · when (+ Past Simple)</p>
+                    <p class="ex">I <b>was doing</b> my homework when my friend <b>called</b>. <span class="tr">Я делала уроки, когда позвонил друг.</span></p>
+                    <p class="note">Длинное действие — Past Continuous, короткое, которое его «прервало», — Past Simple.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-perfect" aria-labelledby="th-perf-t">
+                <h3 id="th-perf-t">Группа Perfect — результат к моменту</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Present Perfect <span>настоящее совершённое</span></h4>
+                    <p><b>Когда:</b> важен результат сейчас; опыт («когда-либо»); действие началось в прошлом и продолжается (since, for); время не названо.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / we <b>have worked</b> · he / she <b>has written</b> (3-я форма)</td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>I <b>haven’t</b> · she <b>hasn’t finished</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Have</b> you ever <b>been</b> to Paris? · <b>Has</b> he <b>finished</b>?</td></tr>
+                    </table>
+                    <p class="markers">already · just · yet · ever · never · recently · so far · this week · since · for</p>
+                    <p class="ex">She <b>has lived</b> here since 2015. <span class="tr">Она живёт здесь с 2015 года.</span></p>
+                    <p class="note"><b>Не путай с Past Simple:</b> если названо время в прошлом (yesterday, ago, last…, in 2019) — только Past Simple: <i>I <b>saw</b> him yesterday</i>, но <i>I <b>have</b> just <b>seen</b> him</i>.</p>
+                  </article>
+                  <article class="tense">
+                    <h4>Past Perfect <span>прошедшее совершённое</span></h4>
+                    <p><b>Когда:</b> действие закончилось раньше другого действия в прошлом («предпрошедшее»).</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / she / they <b>had finished</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>they <b>hadn’t finished</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td><b>Had</b> they <b>finished</b>?</td></tr>
+                    </table>
+                    <p class="markers">by the time · by 5 o’clock yesterday · before · after · already (в рассказе о прошлом)</p>
+                    <p class="ex">When we arrived, the film <b>had</b> already <b>started</b>. <span class="tr">Когда мы пришли, фильм уже начался.</span></p>
+                    <p class="note">Подсказка: в предложении уже есть одно действие в Past Simple, а нужное случилось <b>ещё раньше</b>.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-ppc" aria-labelledby="th-ppc-t">
+                <h3 id="th-ppc-t">Present Perfect Continuous — давно и до сих пор</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Present Perfect Continuous <span>настоящее совершённое длительное</span></h4>
+                    <p><b>Когда:</b> действие началось в прошлом и всё ещё идёт — важно, <b>как долго</b>. Или только что закончилось, и виден результат.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>I / we <b>have been waiting</b> · she <b>has been waiting</b></td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>she <b>hasn’t been sleeping</b> well</td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">?</span><span class="visually-hidden">Вопрос</span></th><td>How long <b>have</b> you <b>been learning</b> English?</td></tr>
+                    </table>
+                    <p class="markers">for (20 minutes) · since (morning) · all day · how long</p>
+                    <p class="ex">We <b>have been waiting</b> for the bus for twenty minutes. <span class="tr">Мы ждём автобус уже двадцать минут.</span></p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-future" aria-labelledby="th-future-t">
+                <h3 id="th-future-t">Как сказать о будущем</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Четыре способа</h4>
+                    <ul class="plain">
+                      <li><b>will + V</b> — решили прямо сейчас, обещание, прогноз: <i>I’m cold. I <b>will close</b> the window.</i></li>
+                      <li><b>be going to + V</b> — намерение, уже решили; прогноз по признакам: <i>Look at the clouds! It <b>is going to rain</b>.</i></li>
+                      <li><b>Present Continuous</b> — договорились, есть время и место: <i>I <b>am meeting</b> Kate at six.</i></li>
+                      <li><b>Present Simple</b> — расписание: <i>The train <b>leaves</b> at 7.30.</i></li>
+                    </ul>
+                  </article>
+                  <article class="tense" id="th-fitp">
+                    <h4>Future-in-the-Past <span>будущее в прошедшем</span></h4>
+                    <p><b>Когда:</b> будущее с точки зрения прошлого — после said, told, thought, knew, hoped, was sure.</p>
+                    <table class="formula">
+                      <tr><th scope="row"><span aria-hidden="true">+</span><span class="visually-hidden">Утверждение</span></th><td>would + V</td></tr>
+                      <tr><th scope="row"><span aria-hidden="true">−</span><span class="visually-hidden">Отрицание</span></th><td>wouldn’t + V</td></tr>
+                    </table>
+                    <p class="ex">She said she <b>would call</b> me in the evening. <span class="tr">Она сказала, что позвонит мне вечером.</span></p>
+                    <p class="ex">I knew he <b>would win</b>. <span class="tr">Я знала, что он победит.</span></p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-passive" aria-labelledby="th-passive-t">
+                <h3 id="th-passive-t">Пассивный залог — действие над предметом</h3>
+                <p>Формула одна: <b>be</b> в нужном времени + <b>3-я форма</b> глагола. Нужен, когда важно не кто сделал, а что сделали. Исполнителя вводят словом <b>by</b>.</p>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Present Simple Passive</h4>
+                    <p class="formula-line">am / is / are + 3-я форма</p>
+                    <p class="ex">English <b>is spoken</b> in many countries. <span class="tr">На английском говорят во многих странах.</span></p>
+                  </article>
+                  <article class="tense">
+                    <h4>Past Simple Passive</h4>
+                    <p class="formula-line">was / were + 3-я форма</p>
+                    <p class="ex">The castle <b>was built</b> in the 12th century. <span class="tr">Замок построили в XII веке.</span></p>
+                  </article>
+                  <article class="tense">
+                    <h4>Present Perfect Passive</h4>
+                    <p class="formula-line">have / has been + 3-я форма</p>
+                    <p class="ex">All the tickets <b>have</b> already <b>been sold</b>. <span class="tr">Все билеты уже проданы.</span></p>
+                  </article>
+                </div>
+                <p class="note">Как узнать в задании: подлежащее — предмет (книга, дом, письмо, фильм), с которым что-то сделали; часто рядом есть by… Число глагола be — по подлежащему: <i>The houses <b>were</b> built</i>.</p>
+              </section>
+
+              <section class="theory-block" id="th-reported" aria-labelledby="th-rep-t">
+                <h3 id="th-rep-t">Согласование времён и косвенная речь</h3>
+                <p>Если главный глагол в прошедшем (said, told, asked, thought, knew), время в придаточном «сдвигается» на шаг в прошлое:</p>
+                <div class="table-wrap">
+                  <table class="table table-stack">
+                    <caption class="visually-hidden">Сдвиг времён в косвенной речи</caption>
+                    <thead><tr><th scope="col">Было в прямой речи</th><th scope="col">Стало после said</th><th scope="col">Пример</th></tr></thead>
+                    <tbody>
+                      <tr><td data-label="Было">Present Simple</td><td data-label="Стало">Past Simple</td><td data-label="Пример">“I like pizza.” → He said he <b>liked</b> pizza.</td></tr>
+                      <tr><td data-label="Было">Present Continuous</td><td data-label="Стало">Past Continuous</td><td data-label="Пример">“I’m reading.” → She said she <b>was reading</b>.</td></tr>
+                      <tr><td data-label="Было">Present Perfect</td><td data-label="Стало">Past Perfect</td><td data-label="Пример">“I’ve lost my key.” → He said he <b>had lost</b> his key.</td></tr>
+                      <tr><td data-label="Было">Past Simple</td><td data-label="Стало">Past Perfect</td><td data-label="Пример">“I saw the film.” → She said she <b>had seen</b> the film.</td></tr>
+                      <tr><td data-label="Было">will</td><td data-label="Стало">would</td><td data-label="Пример">“I’ll help you.” → He said he <b>would help</b> me.</td></tr>
+                      <tr><td data-label="Было">can / may / must</td><td data-label="Стало">could / might / had to</td><td data-label="Пример">“I can swim.” → She said she <b>could</b> swim.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="plain" style="margin-top:12px">
+                  <li>Меняются и слова: now → then, today → that day, yesterday → the day before, tomorrow → the next day, here → there, ago → before.</li>
+                  <li>Вопрос — с прямым порядком слов: <i>She asked me where I <b>lived</b>.</i> · <i>He asked if I <b>liked</b> music.</i></li>
+                  <li>Просьба и приказ — через to: <i>He told me <b>to close</b> the door.</i> · <i>She asked me <b>not to be</b> late.</i></li>
+                </ul>
+              </section>
+
+              <section class="theory-block" id="th-cond" aria-labelledby="th-cond-t">
+                <h3 id="th-cond-t">Условные предложения и I wish</h3>
+                <div class="tense-grid">
+                  <article class="tense">
+                    <h4>Conditional 0 <span>всегда так</span></h4>
+                    <p class="formula-line">If + Present Simple, Present Simple</p>
+                    <p class="ex">If you heat ice, it <b>melts</b>. <span class="tr">Если нагреть лёд, он тает.</span></p>
+                  </article>
+                  <article class="tense">
+                    <h4>Conditional I <span>реальное будущее</span></h4>
+                    <p class="formula-line">If + Present Simple, will + V</p>
+                    <p class="ex">If it <b>rains</b> tomorrow, we <b>will stay</b> at home. <span class="tr">Если завтра будет дождь, мы останемся дома.</span></p>
+                  </article>
+                  <article class="tense">
+                    <h4>Conditional II <span>нереальное, «если бы»</span></h4>
+                    <p class="formula-line">If + Past Simple, would + V</p>
+                    <p class="ex">If I <b>had</b> a dog, I <b>would walk</b> it every day. <span class="tr">Если бы у меня была собака, я бы гуляла с ней каждый день.</span></p>
+                    <p class="note">С be чаще пишут were для всех лиц: <i>If I <b>were</b> you, I would apologise.</i></p>
+                  </article>
+                  <article class="tense">
+                    <h4>I wish <span>«жаль, что…»</span></h4>
+                    <p class="formula-line">I wish + Past Simple — о настоящем</p>
+                    <p class="ex">I wish I <b>lived</b> near the sea. <span class="tr">Жаль, что я не живу у моря.</span></p>
+                    <p class="note">О прошлом — Past Perfect: <i>I wish I <b>had studied</b> harder.</i> — «Жаль, что я не занималась усерднее».</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="theory-block" id="th-irregular" aria-labelledby="th-irr-t">
+                <h3 id="th-irr-t">Неправильные глаголы: 60 самых нужных</h3>
+                <p class="muted">Вторая форма — для Past Simple, третья — для Perfect и пассива.</p>
+                <ul class="irr">
+                  <li><b>be</b> — was / were — been</li><li><b>become</b> — became — become</li><li><b>begin</b> — began — begun</li>
+                  <li><b>break</b> — broke — broken</li><li><b>bring</b> — brought — brought</li><li><b>build</b> — built — built</li>
+                  <li><b>buy</b> — bought — bought</li><li><b>catch</b> — caught — caught</li><li><b>choose</b> — chose — chosen</li>
+                  <li><b>come</b> — came — come</li><li><b>cost</b> — cost — cost</li><li><b>cut</b> — cut — cut</li>
+                  <li><b>do</b> — did — done</li><li><b>draw</b> — drew — drawn</li><li><b>drink</b> — drank — drunk</li>
+                  <li><b>drive</b> — drove — driven</li><li><b>eat</b> — ate — eaten</li><li><b>fall</b> — fell — fallen</li>
+                  <li><b>feel</b> — felt — felt</li><li><b>find</b> — found — found</li><li><b>fly</b> — flew — flown</li>
+                  <li><b>forget</b> — forgot — forgotten</li><li><b>get</b> — got — got</li><li><b>give</b> — gave — given</li>
+                  <li><b>go</b> — went — gone</li><li><b>grow</b> — grew — grown</li><li><b>have</b> — had — had</li>
+                  <li><b>hear</b> — heard — heard</li><li><b>hold</b> — held — held</li><li><b>keep</b> — kept — kept</li>
+                  <li><b>know</b> — knew — known</li><li><b>leave</b> — left — left</li><li><b>lose</b> — lost — lost</li>
+                  <li><b>make</b> — made — made</li><li><b>meet</b> — met — met</li><li><b>pay</b> — paid — paid</li>
+                  <li><b>put</b> — put — put</li><li><b>read</b> — read — read</li><li><b>ride</b> — rode — ridden</li>
+                  <li><b>run</b> — ran — run</li><li><b>say</b> — said — said</li><li><b>see</b> — saw — seen</li>
+                  <li><b>sell</b> — sold — sold</li><li><b>send</b> — sent — sent</li><li><b>sing</b> — sang — sung</li>
+                  <li><b>sit</b> — sat — sat</li><li><b>sleep</b> — slept — slept</li><li><b>speak</b> — spoke — spoken</li>
+                  <li><b>spend</b> — spent — spent</li><li><b>stand</b> — stood — stood</li><li><b>swim</b> — swam — swum</li>
+                  <li><b>take</b> — took — taken</li><li><b>teach</b> — taught — taught</li><li><b>tell</b> — told — told</li>
+                  <li><b>think</b> — thought — thought</li><li><b>throw</b> — threw — thrown</li><li><b>understand</b> — understood — understood</li>
+                  <li><b>wear</b> — wore — worn</li><li><b>win</b> — won — won</li><li><b>write</b> — wrote — written</li>
+                </ul>
+              </section>
+
+              <section class="theory-block" id="th-check" aria-labelledby="th-check-t">
+                <h3 id="th-check-t">Проверь себя: 14 предложений</h3>
+                <p class="muted">Поставь глагол в нужную форму, потом открой ответ.</p>
+                <ol class="selfcheck">
+                  <li>My grandmother ___ (LIVE) in this village since 1980.<details><summary>Ответ</summary><p><b>has lived</b> — Present Perfect: есть since.</p></details></li>
+                  <li>Yesterday we ___ (GO) to the museum.<details><summary>Ответ</summary><p><b>went</b> — Past Simple: yesterday.</p></details></li>
+                  <li>Look! The children ___ (PLAY) in the snow.<details><summary>Ответ</summary><p><b>are playing</b> — Present Continuous: Look!</p></details></li>
+                  <li>My sister usually ___ (GET) up at seven.<details><summary>Ответ</summary><p><b>gets</b> — Present Simple, she → -s.</p></details></li>
+                  <li>This bridge ___ (BUILD) more than a hundred years ago.<details><summary>Ответ</summary><p><b>was built</b> — Past Simple Passive: мост построили, ago.</p></details></li>
+                  <li>When we got to the station, the train ___ (LEAVE).<details><summary>Ответ</summary><p><b>had left</b> — Past Perfect: поезд ушёл раньше, чем мы пришли.</p></details></li>
+                  <li>At eight o’clock yesterday evening I ___ (WATCH) a film.<details><summary>Ответ</summary><p><b>was watching</b> — Past Continuous: точный момент в прошлом.</p></details></li>
+                  <li>Tom said he ___ (CALL) me later.<details><summary>Ответ</summary><p><b>would call</b> — Future-in-the-Past после said.</p></details></li>
+                  <li>If it ___ (RAIN) tomorrow, we will stay at home.<details><summary>Ответ</summary><p><b>rains</b> — после if — Present Simple, не will.</p></details></li>
+                  <li>Many new houses ___ (BUILD) in our town this year.<details><summary>Ответ</summary><p><b>have been built</b> — Present Perfect Passive: this year, результат.</p></details></li>
+                  <li>We ___ (WAIT) for you for half an hour!<details><summary>Ответ</summary><p><b>have been waiting</b> — Present Perfect Continuous: for half an hour, ждём до сих пор.</p></details></li>
+                  <li>English ___ (SPEAK) in many countries.<details><summary>Ответ</summary><p><b>is spoken</b> — Present Simple Passive.</p></details></li>
+                  <li>She asked me where I ___ (LIVE).<details><summary>Ответ</summary><p><b>lived</b> — косвенная речь после asked: Present Simple → Past Simple.</p></details></li>
+                  <li>If I ___ (BE) you, I would apologise.<details><summary>Ответ</summary><p><b>were</b> — Conditional II.</p></details></li>
+                </ol>
+              </section>
+
+              <div class="theory-cta no-print">
+                <p><b>Повторили?</b> Теперь — настоящие задания 20–28 из банка ФИПИ.</p>
+                <button type="button" class="btn btn-primary btn-lg" data-goto-tasks><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pencil"></use></svg>Переходим к заданиям</button>
+              </div>
+              <p class="theory-source">Список времён — по кодификатору ОГЭ-2027 по английскому языку (ФИПИ): элементы 2.4.10–2.4.13, 2.4.19, 2.4.27, 2.4.30–2.4.32.</p>
+            </div>
+            <div class="theory" data-theory="write" hidden>
+              <div class="print-header print-only">ОГЭ English · Письмо (задание 35): шаблон и слова-связки</div>
+              <div class="theory-head">
+                <div>
+                  <span class="section-kicker">Шаг 1 · Шаблон</span>
+                  <h2 class="theory-title">Письмо: шаблон и слова-связки</h2>
+                  <p class="muted">Задание 35 — ответ на электронное письмо друга по переписке. Нужно ответить на 3 его вопроса и уложиться в 100–120 слов.</p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm no-print" data-print-theory><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-print"></use></svg>Распечатать</button>
+              </div>
+
+              <nav class="theory-nav no-print" aria-label="Темы">
+                <a href="#tw-rules">Требования</a>
+                <a href="#tw-template">Шаблон</a>
+                <a href="#tw-phrases">Готовые фразы</a>
+                <a href="#tw-linkers">Слова-связки</a>
+                <a href="#tw-sample">Образец</a>
+                <a href="#tw-mistakes">Частые ошибки</a>
+              </nav>
+
+              <section class="theory-block" id="tw-rules" aria-labelledby="tw-rules-t">
+                <h3 id="tw-rules-t">Что проверяют</h3>
+                <ul class="checkmarks">
+                  <li><b>Объём 100–120 слов.</b> Меньше 90 — 0 баллов за всё письмо; больше 132 — проверят только первые 120.</li>
+                  <li><b>Ответы на все 3 вопроса</b> друга.</li>
+                  <li><b>Благодарность</b> за письмо и <b>надежда на дальнейшие контакты</b>.</li>
+                  <li><b>Обращение, завершающая фраза и подпись</b> (только имя) — каждое на отдельной строке.</li>
+                  <li><b>Абзацы и слова-связки</b>, грамотность.</li>
+                </ul>
+                <p class="note">Максимум 10 баллов: содержание — 3, организация текста — 2, лексика и грамматика — 3, орфография и пунктуация — 2. Если за содержание 0 — всё письмо получает 0.</p>
+              </section>
+
+              <section class="theory-block" id="tw-template" aria-labelledby="tw-template-t">
+                <h3 id="tw-template-t">Шаблон письма</h3>
+                <div class="letter-grid">
+                  <div class="letter" lang="en">
+                    <p class="l-line">Dear Ben,</p>
+                    <p>Thanks for your email. It was great to hear from you!</p>
+                    <p>You asked me about … . I think … because … .</p>
+                    <p>As for …, to be honest, … .</p>
+                    <p>And finally, … . I’d like to … because … .</p>
+                    <p>Write back soon!</p>
+                    <p class="l-line">Best wishes,<br>Anna</p>
+                  </div>
+                  <ol class="letter-parts">
+                    <li><b>Обращение</b> — Dear + имя друга, запятая. Отдельная строка.</li>
+                    <li><b>Благодарность</b> за письмо, ≈ 15 слов. Можно извиниться: Sorry I haven’t written for so long.</li>
+                    <li><b>Ответы на 3 вопроса</b> — основная часть, ≈ 60–75 слов. Лучше по абзацу на вопрос; в каждом ответе — объяснение (because…).</li>
+                    <li><b>Надежда на контакт</b> — ≈ 5–10 слов.</li>
+                    <li><b>Завершающая фраза</b> с запятой и <b>подпись</b> — только имя, каждое на своей строке.</li>
+                  </ol>
+                </div>
+              </section>
+
+              <section class="theory-block" id="tw-phrases" aria-labelledby="tw-phrases-t">
+                <h3 id="tw-phrases-t">Готовые фразы</h3>
+                <div class="phrase-grid" lang="en">
+                  <div class="phrase-card"><h4 lang="ru">Благодарность</h4><ul><li>Thanks for your email.</li><li>Thank you for your last letter.</li><li>It was great to hear from you!</li><li>I was really glad to get your email.</li></ul></div>
+                  <div class="phrase-card"><h4 lang="ru">Извиниться (по желанию)</h4><ul><li>Sorry I haven’t written for so long.</li><li>Sorry for not writing earlier — I’ve been busy with my studies.</li></ul></div>
+                  <div class="phrase-card"><h4 lang="ru">Перейти к ответам</h4><ul><li>You asked me about…</li><li>As for your question about…,</li><li>Speaking of…,</li><li>And now let me answer your questions.</li></ul></div>
+                  <div class="phrase-card"><h4 lang="ru">Надежда на контакт</h4><ul><li>Write back soon!</li><li>I hope to hear from you soon.</li><li>Can’t wait to hear from you.</li><li>Keep in touch!</li></ul></div>
+                  <div class="phrase-card"><h4 lang="ru">Завершающая фраза</h4><ul><li>Best wishes,</li><li>All the best,</li><li>Take care,</li><li>Love,</li></ul></div>
+                  <div class="phrase-card"><h4 lang="ru">Подпись</h4><ul><li lang="ru">Только имя, например: Anna</li><li lang="ru">Без фамилии и без адреса</li></ul></div>
+                </div>
+              </section>
+
+              <section class="theory-block" id="tw-linkers" aria-labelledby="tw-linkers-t">
+                <h3 id="tw-linkers-t">Слова-связки</h3>
+                <p class="muted">Они делают письмо связным — за это дают баллы в критерии «Организация текста».</p>
+                <div class="table-wrap">
+                  <table class="table table-stack">
+                    <caption class="visually-hidden">Слова-связки по назначению</caption>
+                    <thead><tr><th scope="col">Зачем</th><th scope="col">Слова-связки</th><th scope="col">Пример</th></tr></thead>
+                    <tbody>
+                      <tr><td data-label="Зачем"><b>Добавить мысль</b></td><td data-label="Связки" lang="en">and, also, too, besides, what is more, as well as</td><td data-label="Пример" lang="en">I like reading. <b>Besides</b>, I often go to the cinema.</td></tr>
+                      <tr><td data-label="Зачем"><b>Противопоставить</b></td><td data-label="Связки" lang="en">but, however, although, on the other hand</td><td data-label="Пример" lang="en">The film was long. <b>However</b>, I enjoyed it.</td></tr>
+                      <tr><td data-label="Зачем"><b>Объяснить причину</b></td><td data-label="Связки" lang="en">because, as, because of</td><td data-label="Пример" lang="en">I love summer <b>because</b> I can swim in the sea.</td></tr>
+                      <tr><td data-label="Зачем"><b>Сказать о следствии</b></td><td data-label="Связки" lang="en">so, that’s why</td><td data-label="Пример" lang="en">It was raining, <b>so</b> we stayed at home.</td></tr>
+                      <tr><td data-label="Зачем"><b>Привести пример</b></td><td data-label="Связки" lang="en">for example, for instance, such as, like</td><td data-label="Пример" lang="en">I enjoy team sports, <b>for example</b>, volleyball.</td></tr>
+                      <tr><td data-label="Зачем"><b>Высказать мнение</b></td><td data-label="Связки" lang="en">I think, I believe, in my opinion, as for me, personally, to be honest</td><td data-label="Пример" lang="en"><b>In my opinion</b>, small towns are cosy.</td></tr>
+                      <tr><td data-label="Зачем"><b>Выстроить порядок</b></td><td data-label="Связки" lang="en">first of all, firstly, secondly, then, after that, finally</td><td data-label="Пример" lang="en"><b>First of all</b>, thank you for the photos.</td></tr>
+                      <tr><td data-label="Зачем"><b>Перейти к новой теме</b></td><td data-label="Связки" lang="en">as for, speaking of, by the way, anyway</td><td data-label="Пример" lang="en"><b>As for</b> my plans, I want to visit Kazan.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="theory-block" id="tw-sample" aria-labelledby="tw-sample-t">
+                <h3 id="tw-sample-t">Образец: письмо и ответ</h3>
+                <div class="letter-grid">
+                  <div>
+                    <p class="muted" style="margin:0 0 8px">Письмо от друга (учебный пример):</p>
+                    <div class="letter letter-in" lang="en">
+                      <p>…In our school we have lots of clubs after lessons. I go to the photography club. What clubs do you go to after school? How much free time do you usually have? What would you like to try in the future and why?…</p>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="muted" style="margin:0 0 8px">Ответ — <b id="sample-count">105 слов</b>:</p>
+                    <div class="letter" lang="en" id="sample-letter">
+                      <p class="l-line">Dear Ben,</p>
+                      <p>Thanks for your email. It was great to hear from you! Sorry I haven’t written for so long — I’ve been busy with my exams.</p>
+                      <p>You asked me about clubs. I go to the drama club twice a week. We are preparing a play in English, and it’s really exciting.</p>
+                      <p>To be honest, I don’t have much free time this year. On weekdays I have only about two hours after homework, but at weekends I can relax.</p>
+                      <p>In the future I’d like to try photography because I love travelling and I want to take beautiful pictures of nature.</p>
+                      <p>Write back soon!</p>
+                      <p class="l-line">Best wishes,<br>Anna</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="theory-block" id="tw-mistakes" aria-labelledby="tw-mistakes-t">
+                <h3 id="tw-mistakes-t">Частые ошибки</h3>
+                <ul class="crosses">
+                  <li>Ответила не на все 3 вопроса — теряются баллы за содержание.</li>
+                  <li>Мало слов: меньше 90 — 0 баллов. Посчитай слова счётчиком в бланке.</li>
+                  <li>Обращение, завершающая фраза и подпись в одной строке с текстом.</li>
+                  <li>Нет благодарности за письмо или надежды на дальнейшие контакты.</li>
+                  <li>Официальный стиль (Dear Sir, Yours faithfully) — письмо другу неофициальное.</li>
+                  <li>Подпись с фамилией — нужно только имя.</li>
+                  <li>Весь текст одним абзацем.</li>
+                </ul>
+              </section>
+
+              <div class="theory-cta no-print">
+                <p><b>Готово?</b> Пиши письмо по заданию из банка ФИПИ — и проверь объём счётчиком слов.</p>
+                <button type="button" class="btn btn-primary btn-lg" data-goto-tasks><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pencil"></use></svg>Переходим к заданиям</button>
+              </div>
+              <p class="theory-source">Требования — по демоверсии и критериям оценивания ОГЭ-2027 по английскому языку (ФИПИ).</p>
+            </div>
+          </div>
+
+          <div id="tasks-panel" role="tabpanel" aria-labelledby="tab-tasks">
           <div class="bank-bar">
             <div class="bank-nav">
               <button type="button" class="icon-btn" id="page-prev" aria-label="Предыдущая страница"><svg class="ico" aria-hidden="true" focusable="false" style="transform:rotate(180deg)"><use href="#i-arrow"></use></svg></button>
@@ -73,7 +546,7 @@
           </div>
           <p class="mode-note" id="mode-note" hidden>Открыто задание <strong data-code></strong>. <button type="button" class="link-btn" id="back-to-section">Вернуться к разделу</button></p>
           <iframe class="bank-frame" id="bank-frame" title="Открытый банк заданий ФИПИ" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <p class="bank-source">Задания показываются с сайта ФИПИ (oge.fipi.ru) и нужен интернет. Если они не видны — нажми «В новой вкладке».</p>
+          </div>
         </section>
 
         <aside class="solve-side" aria-label="Мой бланк">

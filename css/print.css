@@ -130,3 +130,47 @@
   details > summary::after { display: none !important; }
   details > *:not(summary) { display: block !important; }
 }
+
+/* Печать правил со страницы «Решаем»: только сама теория */
+@media print {
+  body.print-theory .page-head,
+  body.print-theory .section-pick,
+  body.print-theory .section-tip,
+  body.print-theory .bank-tabs,
+  body.print-theory #tasks-panel,
+  body.print-theory .solve-side { display: none !important; }
+  body.print-theory .solve-grid { display: block; }
+  body.print-theory .bank-card { border: 0 !important; box-shadow: none !important; }
+  .theory { padding: 0 !important; }
+  .tense, .phrase-card, .letter, .ex { break-inside: avoid; }
+  .tense, .phrase-card, .irr li { border: 1px solid #000 !important; background: #fff !important; }
+  .letter { box-shadow: none !important; border: 1px solid #000 !important; }
+  .ex { border-left: 3px solid #000 !important; background: #fff !important; }
+  .formula th, .formula td, .formula-line, .note, .theory-cta { background: #fff !important; color: #000 !important; }
+  .selfcheck details p, .checkmarks li::before, .crosses li::before { background: #fff !important; color: #000 !important; border: 1px solid #000; }
+}
+
+/* Компактная печать правил: две колонки, мельче шрифт */
+@media print {
+  .theory { font-size: 9.5pt; line-height: 1.4; }
+  .theory-title { font-size: 16pt; }
+  .theory-block { padding-top: 10px; }
+  .theory-block > h3 { font-size: 12.5pt; margin-bottom: 6px; }
+  .tense-grid, .phrase-grid, .letter-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .tense, .phrase-card { padding: 8px 10px !important; border-radius: 8px; }
+  .tense h4 { font-size: 11pt; margin-bottom: 4px; }
+  .tense p, .formula { margin-bottom: 4px; }
+  .formula th, .formula td { padding: 2px 6px; }
+  .ex, .note { padding: 4px 8px !important; margin-bottom: 4px; }
+  .table th, .table td { padding: 4px 8px; }
+  .how-steps, .selfcheck { gap: 3px; }
+  .irr { grid-template-columns: repeat(3, 1fr) !important; gap: 3px !important; }
+  .irr li { padding: 2px 6px !important; font-size: 9pt; }
+  .selfcheck summary { display: none !important; }
+  .selfcheck details p { display: inline; padding: 0 0 0 6px; border: 0 !important; }
+  .letter { padding: 10px 12px; }
+}
+@media print {
+  .theory p, .theory li, .theory td, .theory th { font-size: 9.5pt !important; }
+  .theory .tr, .tense h4 span, .theory-source { font-size: 8.5pt !important; }
+}

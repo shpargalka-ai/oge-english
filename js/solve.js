@@ -9,12 +9,14 @@
   var frame = document.getElementById('bank-frame');
   if (!frame) return;
 
-  var saved = App.store.get('solve', { section: 'listen', pages: {} });
+  var saved = App.store.get('solve', { section: 'listen', pages: {}, tabs: {} });
   var state = {
     section: App.bankSection(App.qs('s')) ? App.qs('s') : (App.bankSection(saved.section) ? saved.section : 'listen'),
     pages: saved.pages || {},
+    tabs: saved.tabs || {},   // { gram: 'theory' | 'tasks', write: … } — для разделов с правилами
     qid: App.normCode(App.qs('qid'))
   };
+  if (App.qs('tab') === 'tasks' || App.qs('tab') === 'theory') state.tabs[state.section] = App.qs('tab');
 
   var el = {
     chips: document.getElementById('section-chips'),
@@ -39,8 +41,74 @@
   function page() { return Math.min(state.pages[state.section] || 0, pages() - 1); }
 
   function persist() {
-    App.store.set('solve', { section: state.section, pages: state.pages });
+    App.store.set('solve', { section: state.section, pages: state.pages, tabs: state.tabs });
   }
+
+  /* ---------- Вкладки «Правила / Задания ФИПИ» (грамматика и письмо) ---------- */
+
+  var tabsBox = document.getElementById('bank-tabs');
+  var tabTheory = document.getElementById('tab-theory');
+  var tabTasks = document.getElementById('tab-tasks');
+  var theoryPanel = document.getElementById('theory-panel');
+  var tasksPanel = document.getElementById('tasks-panel');
+
+  // Правила показываем первыми, пока не перешли к заданиям; задание по коду — всегда задания
+  function currentTab() {
+    if (!section().theory || state.qid) return 'tasks';
+    return state.tabs[state.section] === 'tasks' ? 'tasks' : 'theory';
+  }
+
+  function renderTabs() {
+    var has = !!section().theory;
+    var tab = currentTab();
+    tabsBox.hidden = !has;
+    theoryPanel.hidden = tab !== 'theory';
+    tasksPanel.hidden = tab !== 'tasks';
+    tabTheory.setAttribute('aria-selected', tab === 'theory');
+    tabTasks.setAttribute('aria-selected', tab === 'tasks');
+    tabTheory.tabIndex = tab === 'theory' ? 0 : -1;
+    tabTasks.tabIndex = tab === 'tasks' ? 0 : -1;
+    var blocks = theoryPanel.querySelectorAll('[data-theory]');
+    for (var i = 0; i < blocks.length; i++) blocks[i].hidden = blocks[i].getAttribute('data-theory') !== state.section;
+  }
+
+  function setTab(tab, focus) {
+    state.tabs[state.section] = tab;
+    if (tab === 'theory') state.qid = '';
+    persist();
+    load();
+    if (focus) (tab === 'theory' ? tabTheory : tabTasks).focus();
+  }
+
+  tabTheory.addEventListener('click', function () { setTab('theory'); });
+  tabTasks.addEventListener('click', function () { setTab('tasks'); });
+  [tabTheory, tabTasks].forEach(function (t) {
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setTab(currentTab() === 'theory' ? 'tasks' : 'theory', true);
+      }
+    });
+  });
+
+  theoryPanel.addEventListener('click', function (e) {
+    if (e.target.closest('[data-goto-tasks]')) {
+      setTab('tasks');
+      document.getElementById('bank-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      App.toast('Удачи! Под каждым заданием есть кнопка «Ответить»', 'pencil');
+      return;
+    }
+    if (e.target.closest('[data-print-theory]')) {
+      document.body.classList.add('print-theory');
+      var done = function () {
+        document.body.classList.remove('print-theory');
+        window.removeEventListener('afterprint', done);
+      };
+      window.addEventListener('afterprint', done);
+      window.print();
+      setTimeout(done, 1000);
+    }
+  });
 
   /* ---------- Разделы ---------- */
 
@@ -73,7 +141,9 @@
       el.modeNote.hidden = true;
       el.pageText.textContent = 'Страница ' + (page() + 1) + ' из ' + pages();
     }
-    frame.src = url;
+    renderTabs();
+    // Банк грузим только когда открыта вкладка с заданиями — и не перезагружаем без нужды
+    if (!tasksPanel.hidden && frame.getAttribute('src') !== url) frame.src = url;
     frame.title = 'Открытый банк заданий ФИПИ: ' + (state.qid ? 'задание ' + state.qid : s.title + ', страница ' + (page() + 1));
     el.newTab.href = url;
     el.prev.disabled = !!state.qid || page() === 0;
@@ -105,6 +175,8 @@
 
   document.getElementById('back-to-section').addEventListener('click', function () {
     state.qid = '';
+    state.tabs[state.section] = 'tasks';
+    persist();
     load();
   });
 

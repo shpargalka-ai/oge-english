@@ -20,7 +20,7 @@
     return '<a class="card sec-tile" href="solve.html?s=' + s.id + '">' +
       '<span class="sec-tile-top">' + App.genreBadge(s.title) + '<span class="sec-tile-count">' + s.count + ' в банке</span></span>' +
       '<span class="sec-tile-title">' + App.escape(s.title) + '</span>' +
-      '<span class="muted sec-tile-tasks">' + App.escape(s.tasks) + '</span>' +
+      '<span class="muted sec-tile-tasks">' + App.escape(s.tasks) + (s.theory ? ' · правила + задания' : '') + '</span>' +
       '<span class="progress" aria-hidden="true"><span class="progress-bar" style="width:' + x.pct + '%"></span></span>' +
       '<span class="sec-tile-line">' + (x.solved ? 'Решено ' + x.solved + ' · верно ' + x.pct + '%' : 'Ещё не начато') + '</span>' +
     '</a>';

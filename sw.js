@@ -5,7 +5,7 @@
    Добавили новый файл на сайт — впишите его в FILES и увеличьте номер VERSION.
    Префикс кэша свой (ogeen-), потому что сайт живёт на одном домене с ИИ-Шпаргалкой. */
 
-var VERSION = 'v1';
+var VERSION = 'v2';
 var CACHE = 'ogeen-' + VERSION;
 
 var FILES = [

@@ -1708,7 +1708,6 @@ dialog.modal::backdrop { background: rgba(10, 14, 28, .55); -webkit-backdrop-fil
   background: #ffffff;
   color-scheme: light;
 }
-.bank-source { margin: 0; padding: 10px 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
 
 .solve-side { display: grid; gap: 14px; }
 .side-card { padding: 18px; }
@@ -1815,3 +1814,144 @@ dialog.modal::backdrop { background: rgba(10, 14, 28, .55); -webkit-backdrop-fil
 .res-ok { background: var(--good-bg); color: var(--good-text); }
 .res-bad { background: var(--bad-bg); color: var(--bad-text); }
 .section-head h2 .badge { vertical-align: middle; font-size: .9rem; }
+
+/* ---------- Правила внутри раздела: вкладки «Правила / Задания ФИПИ» ---------- */
+
+.bank-tabs { padding: 12px 14px 0; border-bottom: 1.5px solid var(--text); background: var(--surface-2); }
+.bank-tabs .tabs { margin-bottom: 12px; }
+.bank-tabs .tabs [role="tab"] .ico { width: 1.1em; height: 1.1em; }
+
+.theory { padding: 22px 18px 26px; }
+@media (min-width: 640px) { .theory { padding: 28px 30px 32px; } }
+.theory [id] { scroll-margin-top: 92px; }
+.theory-head { display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+.theory-title { margin: 0 0 .3em; font-size: clamp(1.5rem, 4vw, 2.1rem); }
+.theory-head p { margin: 0; max-width: 62ch; }
+.theory-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border);
+}
+.theory-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .88rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: border-color .15s;
+}
+.theory-nav a:hover { border-color: var(--text); }
+.theory-block { padding-top: 26px; }
+.theory-block > h3 { margin-bottom: .6em; font-size: 1.35rem; }
+.theory-block > p { max-width: 72ch; }
+.how-steps { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+
+.tense-grid { display: grid; gap: 14px; }
+@media (min-width: 760px) { .tense-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tense { padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: var(--bg); }
+.tense h4 { margin: 0 0 8px; font-size: 1.15rem; font-weight: 850; letter-spacing: -.01em; }
+.tense h4 span { display: block; color: var(--muted); font-size: .85rem; font-weight: 650; letter-spacing: 0; }
+.tense p { margin: 0 0 8px; }
+.formula { width: 100%; margin: 6px 0 10px; border-collapse: separate; border-spacing: 0 4px; font-size: .95rem; }
+.formula th {
+  width: 2.2em;
+  padding: 6px 0;
+  border-radius: 8px 0 0 8px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-weight: 900;
+  text-align: center;
+  vertical-align: top;
+}
+.formula td { padding: 6px 10px; border-radius: 0 8px 8px 0; background: var(--surface); }
+.formula-line { display: inline-block; padding: 6px 12px; border-radius: 10px; background: var(--accent-soft); color: var(--accent-text); font-weight: 750; }
+.markers { color: var(--muted); font-size: .9rem; }
+.markers::before { content: "Маркеры: "; color: var(--text); font-weight: 750; }
+.ex { padding: 10px 12px; border-left: 4px solid var(--marker); border-radius: 0 10px 10px 0; background: var(--surface); }
+.ex .tr { display: block; margin-top: 2px; color: var(--muted); font-size: .88rem; }
+.note { padding: 10px 12px; border-radius: 10px; background: var(--surface-2); font-size: .92rem; }
+.tense .note:last-child { margin-bottom: 0; }
+.plain { margin: 0; padding-left: 1.2em; }
+.plain li + li { margin-top: 6px; }
+
+.irr { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.irr li { padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); font-size: .95rem; }
+
+.selfcheck { margin: 0; padding-left: 1.5em; display: grid; gap: 10px; }
+.selfcheck > li { padding-left: 4px; }
+.selfcheck summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent-text);
+  font-size: .9rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.selfcheck details p { margin: 0; padding: 8px 12px; border-radius: 10px; background: var(--good-bg); color: var(--good-text); }
+
+.theory-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--accent-soft);
+}
+.theory-cta p { margin: 0; }
+.theory-source { margin: 14px 0 0; color: var(--muted); font-size: .82rem; }
+
+/* Письмо */
+.checkmarks, .crosses { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 8px; }
+.checkmarks li, .crosses li { position: relative; padding-left: 32px; }
+.checkmarks li::before, .crosses li::before {
+  position: absolute;
+  left: 0;
+  top: .1em;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 900;
+}
+.checkmarks li::before { content: "✓"; background: var(--good-bg); color: var(--good-text); }
+.crosses li::before { content: "✕"; background: var(--bad-bg); color: var(--bad-text); }
+.letter-grid { display: grid; gap: 18px; align-items: start; }
+@media (min-width: 760px) { .letter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.letter {
+  padding: 18px 20px;
+  border: 1.5px solid var(--text);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 var(--text);
+  line-height: 1.6;
+}
+.letter p { margin: 0 0 10px; }
+.letter p:last-child { margin-bottom: 0; }
+.letter .l-line { font-weight: 700; }
+.letter-in { border-style: dashed; background: var(--surface-2); box-shadow: none; }
+.letter-parts { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.phrase-grid { display: grid; gap: 12px; }
+@media (min-width: 640px) { .phrase-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .phrase-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.phrase-card { padding: 14px 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg); }
+.phrase-card h4 { margin: 0 0 6px; color: var(--accent-text); font-size: 1rem; }
+.phrase-card ul { margin: 0; padding-left: 1.1em; }
+.phrase-card li + li { margin-top: 4px; }
+@media (max-width: 640px) {
+  .theory-head { flex-direction: column; gap: 12px; }
+}
